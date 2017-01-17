@@ -1,20 +1,11 @@
-import React from 'react';
-import { Component } from 'reflux';
+import React, { Component } from 'react';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 
-import JokesStore from './Store';
-
 class Jokes extends Component {
-  constructor(props) {
-    super(props);
-    this.store = JokesStore;
-    this.storeKeys = ['jokes']
-  }
-
   render() {
     return (
       <ListGroup>
-        {this.state.jokes.map(this.renderJoke)}
+        {this.props.jokes.map(this.renderJoke)}
       </ListGroup>
     );
   }
